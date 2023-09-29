@@ -1,0 +1,9 @@
+.card{
+    border-radius: 8px;
+    border-color: black;
+    border-style: solid;
+    margin: 4px;
+    min-height: 4rem;
+    max-height: fit-content;
+    
+}

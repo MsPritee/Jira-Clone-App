@@ -1,0 +1,72 @@
+.list-box{
+    max-height: 84.5vh;
+    min-width: 10rem;
+    border-radius: 12px;
+    overflow: hidden;
+   
+}
+
+.list-box-heading {
+    display: flex;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.list-of-card {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+
+.individual-card{
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.edit-list-title-input [type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-title-btn{
+        background-color: #0bc02c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+}
+
+.list-of-card {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+
+    &::-webkit-scrollbar {
+        width: 8px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb);
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--scrollbar-track);
+    }
+}
+
+
+:root {
+    --scrollbar-thumb: #b3b0b0;
+    --scrollbar-track: #f0f0f0;
+
+}
+
+

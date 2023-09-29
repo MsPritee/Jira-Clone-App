@@ -1,0 +1,11 @@
+.chips {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: rgb(143, 24, 143);
+    width: fit-content;
+    border-radius: 40px;
+    font-size: 14px;
+}
