@@ -13,8 +13,18 @@ const CardModal = ({ listId, cardId, card, isCardOpen, onCardClose }) => {
     const [moveSelectedListId, setMoveSelectedListId] = useState("");
     const lists = useSelector((state) => state.lists);
     const [newCommentText, setNewCommentText] = useState('');
-    const [comments, setComments] = useState(card.comments || []); 
+    const [comments, setComments] = useState(card.comments || []); // Initialize with existing comments if available
     const commentKey = `comments_${listId}_${cardId}`;
+
+
+    
+    // const [newCommentText, setNewCommentText] = useState('');
+
+
+    // const initialComments = JSON.parse(localStorage.getItem(commentKey)) || [];
+    // const [comments, setComments] = useState(initialComments);
+
+
     const [newCardTitle, setCardNewTitle] = useState(card.title);
     const dispatch = useDispatch();
     const [editModes, setEditModes] = useState({});
@@ -73,8 +83,11 @@ const CardModal = ({ listId, cardId, card, isCardOpen, onCardClose }) => {
             alert('Write Something');
             return;
         }
+
+        // Dispatch the addCommentToCard action with the cardId and newCommentText
         dispatch(addCommentToCard(card.id, newCommentText));
 
+        // Update the local state to display the newly added comment
         const newComment = {
             id: uuidv4(),
             text: newCommentText,
@@ -84,8 +97,17 @@ const CardModal = ({ listId, cardId, card, isCardOpen, onCardClose }) => {
         setComments(updatedComments);
         setNewCommentText('');
 
+        // Use the unique comment key for local storage
         localStorage.setItem(commentKey, JSON.stringify(updatedComments));
     };
+
+    // useEffect(() => {
+    //     const storedComments = JSON.parse(localStorage.getItem(commentKey));
+    //     if (storedComments) {
+    //         setComments(storedComments);
+    //     }
+    // }, [commentKey]);
+
 
 
     if (!isCardOpen) return null;
