@@ -24,15 +24,11 @@ const Header = ({ toggleSidebar }) => {
     };
 
     useEffect(() => {
-        // Window resize event listener
         const handleResize = () => {
             setIsMobileView(window.innerWidth <= 1024);
         };
 
-        // Add event listener
         window.addEventListener('resize', handleResize);
-
-        // Clean up the event listener when the component unmounts
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -388,7 +384,6 @@ const Header = ({ toggleSidebar }) => {
                     <FontAwesomeIcon className='bell-icon bell-regular h-4 rotate-5' icon={faBellSlash} style={{ color: "#ffffff", }} />
                     {/* <FontAwesomeIcon className="p-2 bg-gray-200 rounded-full" icon={faBell} /> */}
                 </span>
-                {/* cursor-pointer hover:text-gray-700 */}
                 <span className="px-1 ">
                     <FontAwesomeIcon className="fa-regular h-4   " icon={faCircleQuestion} style={{ color: "#ffffff", }} />
                 </span>

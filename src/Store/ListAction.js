@@ -56,7 +56,7 @@ export const updateCardOrder = (listId, newCardOrder) => ({
     payload: { listId, newCardOrder },
 });
 
-// Action to add a comment to a card
+
 export const addCommentToCard = (cardId, commentText) => ({
     type: 'ADD_COMMENT_TO_CARD',
     payload: {
@@ -67,18 +67,7 @@ export const addCommentToCard = (cardId, commentText) => ({
 
 
 
-// export const addCommentToCard = (listId, cardId, commentText) => ({
-//     type: "ADD_COMMENT_TO_CARD",
-//     payload: {
-//         listId,
-//         cardId,
-//         comment: {
-//             id: uuidv4(), // Generate a unique ID for the comment
-//             text: commentText,
-//             timestamp: Date.now(),
-//         },
-//     },
-// });
+
 
 export const deleteCommentFromCard = (listDelCommentId, DelCommentcardId, commentId) => ({
     type: 'DELETE_COMMENT_FROM_CARD',

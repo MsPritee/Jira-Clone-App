@@ -45,13 +45,7 @@ const List = ({ list, handleRemoveCard, handleCardTitleChange, targetListId }) =
         setIsListModalOpen(false);
     };
 
-    // const openCardModal = (cardId) => {
-    //     setCardModals({ ...cardModals, [cardId]: true });
-    // };
 
-    // const closeCardModal = (cardId) => {
-    //     setCardModals({ ...cardModals, [cardId]: false });
-    // };
 
 
     return (
@@ -120,22 +114,7 @@ const List = ({ list, handleRemoveCard, handleCardTitleChange, targetListId }) =
                     </div>
                 )}
             </Droppable>
-{/* 
-            {list.cards.map((card, index) => (
-                <CardModal
-                    key={card.id}
-                    isCardOpen={cardModals[card.id] || false}
-                    onCardClose={() => closeCardModal(card.id)}
-                    listId={list.id}
-                    card={card}
-                    newCardTitle={newCardTitle}
-                    handleCardTitleChange={handleCardTitleChange}
-                    handleCardUpdateTitle={handleCardUpdateTitle}
-                    handleCardDeleteList={handleRemoveCard}
-                    targetListId={targetListId}
-                    isCopy={true}
-                />
-            ))} */}
+
         </>
     );
 };

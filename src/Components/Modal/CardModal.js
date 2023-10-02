@@ -13,21 +13,12 @@ const CardModal = ({ listId, cardId, card, isCardOpen, onCardClose }) => {
     const [moveSelectedListId, setMoveSelectedListId] = useState("");
     const lists = useSelector((state) => state.lists);
     const [newCommentText, setNewCommentText] = useState('');
-    const [comments, setComments] = useState(card.comments || []); // Initialize with existing comments if available
+    const [comments, setComments] = useState(card.comments || []); 
     const commentKey = `comments_${listId}_${cardId}`;
-
-
-    
-    // const [newCommentText, setNewCommentText] = useState('');
-
-
-    // const initialComments = JSON.parse(localStorage.getItem(commentKey)) || [];
-    // const [comments, setComments] = useState(initialComments);
-
-
     const [newCardTitle, setCardNewTitle] = useState(card.title);
-    const dispatch = useDispatch();
     const [editModes, setEditModes] = useState({});
+    const dispatch = useDispatch();
+
 
     const handleCardTitleChange = (e) => {
         setCardNewTitle(e.target.value);
@@ -84,10 +75,8 @@ const CardModal = ({ listId, cardId, card, isCardOpen, onCardClose }) => {
             return;
         }
 
-        // Dispatch the addCommentToCard action with the cardId and newCommentText
         dispatch(addCommentToCard(card.id, newCommentText));
 
-        // Update the local state to display the newly added comment
         const newComment = {
             id: uuidv4(),
             text: newCommentText,
@@ -96,18 +85,10 @@ const CardModal = ({ listId, cardId, card, isCardOpen, onCardClose }) => {
         const updatedComments = [...comments, newComment];
         setComments(updatedComments);
         setNewCommentText('');
-
-        // Use the unique comment key for local storage
         localStorage.setItem(commentKey, JSON.stringify(updatedComments));
     };
 
-    // useEffect(() => {
-    //     const storedComments = JSON.parse(localStorage.getItem(commentKey));
-    //     if (storedComments) {
-    //         setComments(storedComments);
-    //     }
-    // }, [commentKey]);
-
+    
 
 
     if (!isCardOpen) return null;
