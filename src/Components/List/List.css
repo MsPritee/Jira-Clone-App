@@ -1,5 +1,5 @@
 .list-box{
-    /* overflow-y: auto; */
+
     max-height: 84.5vh;
     min-width: 10rem;
     border-radius: 12px;
@@ -19,9 +19,6 @@
     flex-grow: 1;
     overflow-y: auto;
 }
-/* .card{
-    background-color: blue;
-} */
 
 .individual-card{
     background-color: aliceblue;

@@ -1,4 +1,3 @@
-// MemberAvatar.js
 import React from 'react';
 
 function renderMemberAvatar(member) {

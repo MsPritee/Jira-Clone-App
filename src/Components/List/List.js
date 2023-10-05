@@ -4,7 +4,6 @@ import { updateListTitle, deleteList, addCard } from '../../Store/ListAction';
 import Card from '../Card/Card';
 import './List.css';
 import ListModal from '../Modal/ListModal';
-// import CardModal from '../Modal/CardModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { Draggable, Droppable } from 'react-beautiful-dnd';

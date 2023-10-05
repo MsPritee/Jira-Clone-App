@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './ListModal.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
