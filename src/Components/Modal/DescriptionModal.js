@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './Modals.css'
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 

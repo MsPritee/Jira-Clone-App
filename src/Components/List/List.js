@@ -6,14 +6,14 @@ import './List.css';
 import ListModal from '../Modal/ListModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faEllipsis } from '@fortawesome/free-solid-svg-icons';
-import { Draggable, Droppable } from 'react-beautiful-dnd';
+import {  Droppable } from 'react-beautiful-dnd';
 
 const List = ({ list, handleRemoveCard, handleCardTitleChange, targetListId }) => {
     const [editMode, setEditMode] = useState(false);
     const [newTitle, setNewTitle] = useState(list.title);
     const [newCardTitle, setNewCardTitle] = useState('');
     const [isListModalOpen, setIsListModalOpen] = useState(false);
-    const [cardModals, setCardModals] = useState({});
+    // const [cardModals, setCardModals] = useState({});
     const dispatch = useDispatch();
 
     const handleTitleChange = (e) => {
