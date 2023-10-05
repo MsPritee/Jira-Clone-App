@@ -1,6 +1,6 @@
 {
   "name": "jira_clone_app",
-  "homepage": "https://MsPritee.github.io/Jira-Clone-App",
+  "homepage": "https://MsPritee.github.io/jira-clone-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
