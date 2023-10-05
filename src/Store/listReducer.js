@@ -1,35 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
-    lists: [
-        {
-            id: '',
-            title: '',
-            cards: [
-                {
-                    id: '',
-                    title: '',
-                    comments: [],
-                },
-                {
-                    id: '',
-                    title: '',
-                    comments: [],
-                },
-            ],
-        },
-        {
-            id: '',
-            title: '',
-            cards: [
-                {
-                    id: '',
-                    title: '',
-                    comments: [],
-                },
-            ],
-        },
-    ],
+    lists: [],
 };
 
 const listReducer = (state = initialState, action) => {
@@ -59,6 +31,7 @@ const listReducer = (state = initialState, action) => {
                                     title: action.payload.cardTitle,
                                     timestamp: action.payload.timestamp,
                                     comments: [], // Initialize an empty comments array for each card
+                                   descriptions: [],
                                 },
                             ],
                         };
@@ -153,8 +126,8 @@ const listReducer = (state = initialState, action) => {
                 ...state,
                 lists: [...state.lists],
             };
-        
-        
+
+
         case 'MOVE_CARD':
             const {
                 moveSourceListId,
@@ -259,6 +232,30 @@ const listReducer = (state = initialState, action) => {
                 }),
             };
 
+        case 'ADD_DESCRIPTION_TO_CARD':
+            const { descriptionCardId, descriptionText } = action.payload;
+
+            return {
+                ...state,
+                lists: state.lists.map((list) => ({
+                    ...list,
+                    cards: list.cards.map((card) => {
+                        if (card.id === descriptionCardId) {
+                            return {
+                                ...card,
+                                description: [
+                                    ...card.descriptions,
+                                    {
+                                    id: uuidv4(),
+                                    text: descriptionText,
+                                    }
+                                ]
+                            };
+                        }
+                        return card;
+                    }),
+                })),
+            };
 
         case "DELETE_LIST":
             const filteredLists = state.lists.filter((list) => list.id !== action.payload);

@@ -37,53 +37,55 @@ const Card = ({ listId, targetListId, card, handleCardUpdateTitle, handleRemoveC
 
   return (
     <>
-      <div>
-        <Draggable key={card.id} draggableId={card.id}>
-          {(provided) => (
+      <div >
+        <div onClick={() => openCardModal(card.id)}>
+          <Draggable key={card.id} draggableId={card.id}>
+            {(provided) => (
 
-            <div
-              ref={provided.innerRef}
-              {...provided.draggableProps}
-              {...provided.dragHandleProps}
-              className='card h-5 m-1 bg-gray-100 rounded-md'
-            >
-              <div className='individual-card justify-between flex flex-row'>
-                <div className='card-title-text ml-3'>
-                  {editMode ? (
-                    <input type="text" value={newCardTitle} onChange={handleCardTitleChange} />
-                  ) : (
-                    <h6 className='card-title mt-2'>{card.title}</h6>
-                  )}
-                </div>
+              <div
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                className='card h-5 m-1 bg-gray-100 rounded-md'
+              >
+                <div className='individual-card justify-between flex flex-row'>
+                  <div className='card-title-text ml-3'>
+                    {editMode ? (
+                      <input type="text" value={newCardTitle} onChange={handleCardTitleChange} />
+                    ) : (
+                      <h6 className='card-title mt-2'>{card.title}</h6>
+                    )}
+                  </div>
 
-                <div className='list p-2'>
-                  <button className='edit-Card-btn' onClick={() => openCardModal(card.id)}>
-                    <FontAwesomeIcon className='edit-btn' icon={faPenToSquare} />
-                  </button>
+                  <div className='list p-2'>
+                    <button className='edit-Card-btn' onClick={() => openCardModal(card.id)}>
+                      <FontAwesomeIcon className='edit-btn' icon={faPenToSquare} />
+                    </button>
+                  </div>
                 </div>
               </div>
-              </div>
-                  )}
-              </Draggable>
-         
-            
+            )}
+          </Draggable>
+        </div>
+
 
         {cardModals[card.id] && (
-            <CardModal
-              isCardOpen={cardModals[card.id]}
-              onCardClose={() => closeCardModal(card.id)}
-              listId={listId}
-              card={card}
-              newCardTitle={newCardTitle}
-              handleCardTitleChange={handleCardTitleChange}
-              handleCardUpdateTitle={handleCardUpdateTitle}
-              handleCardDeleteList={handleRemoveCard}
-              targetListId={targetListId}
-              isCopy={true}
-            />
-          )}
+          <CardModal
+            isCardOpen={cardModals[card.id]}
+            onCardClose={() => closeCardModal(card.id)}
+            listId={listId}
+            cardId={card}
+            card={card}
+            newCardTitle={newCardTitle}
+            handleCardTitleChange={handleCardTitleChange}
+            handleCardUpdateTitle={handleCardUpdateTitle}
+            handleCardDeleteList={handleRemoveCard}
+            targetListId={targetListId}
+            isCopy={true}
+          />
+        )}
 
-          {/* <div className='list p-2'>
+        {/* <div className='list p-2'>
           {editMode ? (
             <button className='update-Card-btn' onClick={handleUpdateCardTitle}>
               Save

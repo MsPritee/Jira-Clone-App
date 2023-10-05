@@ -56,7 +56,6 @@ export const updateCardOrder = (listId, newCardOrder) => ({
     payload: { listId, newCardOrder },
 });
 
-
 export const addCommentToCard = (cardId, commentText) => ({
     type: 'ADD_COMMENT_TO_CARD',
     payload: {
@@ -66,15 +65,20 @@ export const addCommentToCard = (cardId, commentText) => ({
 });
 
 
-
-
-
 export const deleteCommentFromCard = (listDelCommentId, DelCommentcardId, commentId) => ({
     type: 'DELETE_COMMENT_FROM_CARD',
     payload: {
         listDelCommentId,
         DelCommentcardId,
         commentId,
+    },
+});
+
+export const addDescriptionToCard = (descriptioncardId, descriptionText) => ({
+    type: 'ADD_DESCRIPTION_TO_CARD',
+    payload: {
+        descriptioncardId,
+        descriptionText,
     },
 });
 

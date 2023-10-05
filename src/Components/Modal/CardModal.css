@@ -33,22 +33,34 @@
 .edit-card-left-side {
     left: 0;
     padding: 20px;
-    flex: 1;
+    flex: 3;
 }
 
+/*  */
+
+
+.del-btn,
 .copy-card-btn,
- .move-card-btn {
-    background-color: #07f8e0;
+.move-card-btn,
+.members-button {
+    width: 150px;
+    margin-bottom: 10px;
+    background-color: #d8d9d9bb;
     color: #070707;
     border: none;
     border-radius: 5px;
     padding: 6px 20px;
-    /* margin-right: 10px; */
     cursor: pointer;
     transition: background-color 0.3s ease;
 
 }
 
+.btn:hover {
+    background-color: #00c5a9;
+    color: rgb(0, 0, 0);
+
+    font-weight: bold;
+}
 
 .card-date-creation {
     position: absolute;
@@ -68,28 +80,11 @@
     align-items: flex-end;
 }
 
-.del-btn-box {
-    position: absolute;
-    margin-top: 20px;
-
-}
-
-.del-btn-box {
-    display: flex;
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 3rem;
-}
 
 .del-btn {
-    background-color: #ff5733;
-    border: 1px solid #ff5733;
-    color: #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #ff4015b9;
+    border: 1px solid #f53307;
+    /* color: #fff; */
 }
 
 .del-btn:hover {
@@ -116,15 +111,16 @@
     margin-top: 20px;
 }
 
-.card-title-edit-box input[type="text"] {
+.card-title-edit-box input[type="text"],
+.search-bar input[type="text"] {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.card-title-edit-box button {
-    background-color: #3498db;
+.edit-card-title-btn {
+    background-color: #17db05;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -165,27 +161,11 @@
     right: 10px;
 }
 
-.Copy-Card,
-.Move-Card {
-    margin-top: 20px;
-}
+
 
 select {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.del-btn {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.del-btn-text {
-    margin: 0;
 }
