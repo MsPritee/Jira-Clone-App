@@ -1,1 +1,1 @@
-# [jira](https://jirra.netlify.app/)https://jirra.netlify.app/
+# [jira] (https://jirra.netlify.app/)https://jirra.netlify.app/
